@@ -43,6 +43,7 @@ public class Question4 {
 
     // as described in the stackoverflow, check the link above
     // the given code uses more C language instead of Java
+    // Java provides easier methods to implement and achieve the goal
     public static String myReplaceSpaces(String s, int length) {
 
         System.out.println("s: " + s);

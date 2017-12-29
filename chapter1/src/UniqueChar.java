@@ -21,7 +21,7 @@ public class UniqueChar {
 
     // assume input string is lower letters
     // <<, &, and |: Bitwise and Bit Shift Operators
-    // the int type has a limited range, which affects the binary number range and make the result inaccurate. 
+    // the int type has a limited range, which affects the binary number range and make the result inaccurate.
     public boolean isUniqueChar(String string) {
         System.out.println("========= isUniqueChar func =========");
         int checker = 0;

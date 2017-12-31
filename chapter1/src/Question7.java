@@ -13,6 +13,8 @@ public class Question7 {
     public static void setZeros(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];
+//        System.out.println("row size: " + row.length);
+//        System.out.println("column size: " + column.length);
 
         // store the row and column index with value 0
         for (int i = 0; i < matrix.length; i++) {
@@ -50,11 +52,57 @@ public class Question7 {
         }
     }
 
+
+    public static int[][] mySetZeros(int[][] matrix) {
+        int matrixRowSize = matrix.length;
+//        System.out.println("matrix row size: " + matrixRowSize);
+        int matrixColumnSize = matrix[0].length;
+//        System.out.println("matrix column size: " + matrixColumnSize);
+
+        int[][] result = new int[matrixRowSize][matrixColumnSize];
+        for (int i = 0; i < matrixRowSize; i++) {
+            for (int j = 0; j < matrixColumnSize; j++) {
+                result[i][j] = matrix[i][j];
+            }
+        }
+
+        for (int rowIndex = 0; rowIndex < matrixRowSize; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < matrixColumnSize; columnIndex++) {
+                if (matrix[rowIndex][columnIndex] == 0) {
+                    nullifyColumn(result, columnIndex);
+                    nullifyRow(result, rowIndex);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static String printMatrix(int[][] matrix) {
+        StringBuffer matrixBuffer = new StringBuffer();
+        matrixBuffer.append("print matrix:" + System.lineSeparator());
+
+        int rowSize = matrix.length;
+        int columnSize = matrix[0].length;
+
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < columnSize; j++) {
+                matrixBuffer.append(matrix[i][j]);
+                matrixBuffer.append(" ");
+            }
+            matrixBuffer.append(System.lineSeparator());
+        }
+        return matrixBuffer.toString();
+    }
+
     public static void main(String args[]) {
         // create a matrix
+        // rowLength means the number of rows
+        // columnLength means the number of columns
         int rowLength = 3;
         int columnLength = 4;
         int[][] matrix = new int[rowLength][columnLength];
+        int[][] matrix2 = new int[rowLength][columnLength];
 
         for (int i = 0; i < rowLength; i++) {
             for (int j = 0; j < columnLength; j++) {
@@ -63,6 +111,12 @@ public class Question7 {
         }
 
         matrix[1][2] = 0;
+
+        for (int i = 0; i < rowLength; i++) {
+            for (int j = 0; j < columnLength; j++) {
+                matrix2[i][j] = matrix[i][j];
+            }
+        }
 
         System.out.println("=======original matrix:=======");
         for (int i = 0; i < rowLength; i++) {
@@ -78,6 +132,15 @@ public class Question7 {
         for (int i = 0; i < rowLength; i++) {
             for (int j = 0; j < columnLength; j++) {
                 System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("=======mySetZeros matrix:=======");
+        int[][] myMatrix = mySetZeros(matrix2);
+        for (int i = 0; i < rowLength; i++) {
+            for (int j = 0; j < columnLength; j++) {
+                System.out.print(myMatrix[i][j] + " ");
             }
             System.out.println();
         }

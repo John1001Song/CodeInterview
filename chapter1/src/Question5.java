@@ -3,7 +3,7 @@ public class Question5 {
     // feel like my method is still similar to the given one except the StringBuffer
     // countCompression goes through the string without doing appending just counting.
     // It is useful for method compressAlternate, which can be found in the book page 178
-    
+
     // 学习笔记：
     // StringBuffer is faster than String when appending new char or string to the original string.
     // http://blog.csdn.net/mad1989/article/details/26389541

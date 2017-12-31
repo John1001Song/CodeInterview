@@ -52,7 +52,9 @@ public class Question7 {
         }
     }
 
-
+    // my idea is similar to the given code
+    // difference is, I did not use boolean arrays, but I nullify a copied matrix and check 0 on the original matrix
+    // my method costs more space
     public static int[][] mySetZeros(int[][] matrix) {
         int matrixRowSize = matrix.length;
 //        System.out.println("matrix row size: " + matrixRowSize);
@@ -76,23 +78,6 @@ public class Question7 {
         }
 
         return result;
-    }
-
-    public static String printMatrix(int[][] matrix) {
-        StringBuffer matrixBuffer = new StringBuffer();
-        matrixBuffer.append("print matrix:" + System.lineSeparator());
-
-        int rowSize = matrix.length;
-        int columnSize = matrix[0].length;
-
-        for (int i = 0; i < rowSize; i++) {
-            for (int j = 0; j < columnSize; j++) {
-                matrixBuffer.append(matrix[i][j]);
-                matrixBuffer.append(" ");
-            }
-            matrixBuffer.append(System.lineSeparator());
-        }
-        return matrixBuffer.toString();
     }
 
     public static void main(String args[]) {

@@ -1,3 +1,3 @@
 # CodeInterview
 # CodeSignal
-Record interesting and difficult questions fromn app.codesignal.com
+Record interesting and difficult questions from app.codesignal.com
